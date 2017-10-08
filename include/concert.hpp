@@ -9,13 +9,19 @@ public:
 
 	Concert();
 	Concert(std::string concertName, std::vector<std::string> friends, int desire, tm date);
-	//bool Concert::operator(const Concert& other) const;
+	bool operator<(const Concert& other) const;
 
 	std::string getConcertName()const; 
 	std::vector<std::string> getFriends()const;
 	int getDesire()const;
 	tm getDate()const;
-	
+
+	/*
+	void setConcertName(); 
+	void <std::string> setFriends();
+	void setDesire();
+	void setDate();
+	*/
 
 
 private:

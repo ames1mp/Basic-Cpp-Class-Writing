@@ -10,8 +10,6 @@ Concert::Concert() {
 	this->desire = 0;
 	std::tm date = {};
 	this->date = date;
-
-
 }
 
 Concert::Concert(std::string concertName, std::vector<std::string> friends, int desire, tm date) {
@@ -20,6 +18,15 @@ Concert::Concert(std::string concertName, std::vector<std::string> friends, int 
 	this->friends = friends;
 	this->desire = desire;
 	this->date = date;
+}
+
+bool Concert::operator<(const Concert& other) const {
+
+	if(this->date.tm_year < other->date.tm_year)
+		return true;
+	if(this->date.tm_year > other->date.tm_year)
+		return false;
+
 }
 
 std::string Concert::getConcertName()const {
