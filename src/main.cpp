@@ -21,7 +21,12 @@ int main() {
 
 	std::vector<std::tm> dates;
 	for (int i = 0; i < 10; ++i) {
-		std::tm temp{0,0,0,day++,mon++,year++,0,0,0};
+		//I looked up rand calls from 
+		//http://www.cplusplus.com/reference/cstdlib/rand/
+		int day = rand() % 28 + 1;
+		int month = rand() % 11;
+		int year = rand() % 17 + 100;
+		std::tm temp{0,0,0,day,month,year,0,0,0};
 		dates.push_back(temp); 
 	}
 
@@ -38,12 +43,13 @@ int main() {
 
 	std::vector<Concert> concerts;
 	for (int i = 0; i < 10; ++i) {
-		Concert temp{concertNames[i], friends, i, dates[i]};
+		int desire = rand() % 10;
+		Concert temp{concertNames[i], friends, desire, dates[i]};
 		concerts.push_back(temp); 
 	}
 	//same date different desire
-	Concert c1("Coheed and Cambria", friends, 9, dates[0]);
-	Concert c2("Walter Trout", friends, 3, dates[0]);
+	Concert c1("The Who", friends, 9, dates[0]);
+	Concert c2("Led Zepplin", friends, 3, dates[0]);
 	//same year and month, different days, same desire
 	Concert c3("Bob Dylan", friends, 3, dates[10]);
 	Concert c4("GVSU Laker Marching Band", friends, 3, dates[11]);
@@ -58,14 +64,14 @@ int main() {
 	concerts.push_back(c6);
 
 	for(int i = 0; i < 15; ++i) {
-		cout << concerts[i];
+		std::cout << concerts[i];
 	}
 	std::cout << std::endl;
 
 	std::sort(concerts.begin(), concerts.end());
 
 	for(int i = 0; i < 15; ++i) {
-		cout << concerts[i];
+		std::cout << concerts[i];
 	}
 
 	return 0;

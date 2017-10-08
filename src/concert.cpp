@@ -30,14 +30,22 @@ bool Concert::operator<(const Concert& other) const {
 		return true;
 	if(this->date.tm_mon > other.date.tm_mon)
 		return false;
-	if(this->date.tm_mday > other.date.tm_mday)
+	if(this->date.tm_mday < other.date.tm_mday)
 		return true;
 	if(this->date.tm_mday > other.date.tm_mday)
 		return false;
 	if(this->desire > other.desire)
-		return false;
-	return true;
+		return true;
+	return false;
 
+}
+
+std::ostream& operator<<(std::ostream& os, const Concert& concert) {
+	os << concert.getConcertName() << " " << concert.getDate().tm_mon + 1 
+	<< "/" << concert.getDate().tm_mday << "/" 
+	<< concert.getDate().tm_year + 1900 << " Desire: " << concert.getDesire() 
+	<< std::endl;
+	return os;
 }
 
 std::string Concert::getConcertName()const {

@@ -2,6 +2,7 @@
 #define CONCERT_H
 
 #include <string>
+#include <iostream>
 
 class Concert {
 
@@ -27,12 +28,7 @@ private:
 	tm date;
 };
 
-ostream& operator<<(ostream& os, const Concert& concert) {
-	os << concert.concertName << " " << concert.date.tm_mon + 1 
-	<< "/" << concert.date.tm_mday << "/" 
-	<< concert.date.year + 1900 << " Desire: " << concert.desire 
-	<< std::endl;
-}
+std::ostream& operator<<(std::ostream& os, const Concert& concert);
 
 
 
