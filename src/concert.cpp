@@ -22,10 +22,21 @@ Concert::Concert(std::string concertName, std::vector<std::string> friends, int 
 
 bool Concert::operator<(const Concert& other) const {
 
-	if(this->date.tm_year < other->date.tm_year)
+	if(this->date.tm_year < other.date.tm_year)
 		return true;
-	if(this->date.tm_year > other->date.tm_year)
+	if(this->date.tm_year > other.date.tm_year)
 		return false;
+	if(this->date.tm_mon < other.date.tm_mon)
+		return true;
+	if(this->date.tm_mon > other.date.tm_mon)
+		return false;
+	if(this->date.tm_mday > other.date.tm_mday)
+		return true;
+	if(this->date.tm_mday > other.date.tm_mday)
+		return false;
+	if(this->desire > other.desire)
+		return false;
+	return true;
 
 }
 
