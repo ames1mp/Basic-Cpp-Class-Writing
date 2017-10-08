@@ -12,7 +12,7 @@ Concert::Concert() {
 
 }
 
-Concert::Concert(std::string concertName, std::vector<std::string> friends, int desire>, std::tm date) {
+Concert::Concert(std::String concertName, std::vector<std::String> friends, int desire>, std::tm date) {
 
 	this->concertName = concertName;
 	this->friends = friends;

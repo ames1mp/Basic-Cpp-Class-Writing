@@ -8,8 +8,8 @@ class Concert {
 public:
 
 	Concert();
-	Concert(std::string concertName, std::vector<std::string> friends, int desire>, std::tm date);
-	bool Concert::operator<(const Concert& other) const;
+	Concert(std::String concertName, std::vector<std::String> friends, int desire, tm date);
+	bool Concert::operator(const Concert& other) const;
 	
 
 
@@ -17,13 +17,11 @@ private:
 	
 	std::string concertName;
 	
-	std::vector<std::string> friends;
+	std::vector<std::String> friends;
 	
 	int desire;
 	
-	std::tm date;
-
- 
+	tm date;
 };
 
 
