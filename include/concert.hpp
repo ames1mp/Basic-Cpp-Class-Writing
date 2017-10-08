@@ -16,14 +16,6 @@ public:
 	int getDesire()const;
 	tm getDate()const;
 
-	/*
-	void setConcertName(); 
-	void <std::string> setFriends();
-	void setDesire();
-	void setDate();
-	*/
-
-
 private:
 	
 	std::string concertName;
@@ -35,7 +27,12 @@ private:
 	tm date;
 };
 
-
+ostream& operator<<(ostream& os, const Concert& concert) {
+	os << concert.concertName << " " << concert.date.tm_mon + 1 
+	<< "/" << concert.date.tm_mday << "/" 
+	<< concert.date.year + 1900 << " Desire: " << concert.desire 
+	<< std::endl;
+}
 
 
 

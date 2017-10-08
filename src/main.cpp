@@ -58,21 +58,15 @@ int main() {
 	concerts.push_back(c6);
 
 	for(int i = 0; i < 15; ++i) {
-		std::cout << concerts[i].getConcertName() << std::endl;
+		cout << concerts[i];
 	}
 	std::cout << std::endl;
 
 	std::sort(concerts.begin(), concerts.end());
 
 	for(int i = 0; i < 15; ++i) {
-		std::cout << concerts[i].getConcertName() << std::endl;
+		cout << concerts[i];
 	}
-
-	std::cout << c1.getDesire() << std::endl;
-	std::cout << c1.getDate().tm_mon << std::endl;
-	//std::cout << (c1 < c2) << std::endl;
-
-
 
 	return 0;
 }
