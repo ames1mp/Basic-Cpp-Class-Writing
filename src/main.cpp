@@ -79,19 +79,23 @@ int main() {
 	concerts.push_back(c5);
 	concerts.push_back(c6);
 
+	std::cout << std::endl;
 	std::cout << "---------------Before Sort---------------";
+	std::cout << std::endl;
 	for(int i = 0; i < 15; ++i) {
 		std::cout << concerts[i];
 	}
 	
 	std::cout << std::endl;
 	std::cout << "---------------After Sort----------------";
-
+	std::cout << std::endl;
+	
 	std::sort(concerts.begin(), concerts.end());
 
 	for(int i = 0; i < 15; ++i) {
 		std::cout << concerts[i];
 	}
+	std::cout << std::endl;
 
 	return 0;
 }
