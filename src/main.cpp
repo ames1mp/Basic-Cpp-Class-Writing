@@ -9,8 +9,13 @@
 #include <ctime>
 #include "concert.hpp"
 
-
-
+/***********************************************************************
+ 	Main driver for the program. Generates random dates and desire
+ 	levels. Creates concert objects and adds them to a vector. Also adds
+ 	hard coded concerts to serve as test cases. Sorts the vector of
+ 	concerts, and prints them using an overloaded << operator.
+ 	@return 0 on success.
+***********************************************************************/
 int main() {
 	std::vector<std::string> concertNames = {"Coheed and Cambria",
 	"Pink Floyd", "Paul McCartney", "System of a Down", "Eminem",
@@ -32,7 +37,7 @@ int main() {
 		dates.push_back(temp); 
 	}
 
-	//Some more interesting test cases for dates
+	//Some interesting test cases for dates
 
 	//same year and month, different days
 	std::tm temp1{0,0,0,11,4,117,0,0,0}; //index 10
@@ -78,6 +83,7 @@ int main() {
 	for(int i = 0; i < 15; ++i) {
 		std::cout << concerts[i];
 	}
+	
 	std::cout << std::endl;
 	std::cout << "---------------After Sort----------------";
 

@@ -1,3 +1,8 @@
+
+/***********************************************************************
+ 	@author Mike Ames
+ 	@version Fall 2017
+***********************************************************************/
 #ifndef CONCERT_H
 #define CONCERT_H
 
@@ -9,7 +14,8 @@ class Concert {
 public:
 
 	Concert();
-	Concert(std::string concertName, std::vector<std::string> friends, int desire, tm date);
+	Concert(std::string concertName, std::vector<std::string> friends, 
+		int desire, tm date);
 	bool operator<(const Concert& other) const;
 
 	std::string getConcertName()const; 
@@ -29,15 +35,5 @@ private:
 };
 
 std::ostream& operator<<(std::ostream& os, const Concert& concert);
-
-
-
-
-
-
-
-
-
-
 
 #endif
